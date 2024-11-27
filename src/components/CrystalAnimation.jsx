@@ -10,7 +10,7 @@ const crystalInitialValues = { x: 0, y: 0 };
 
 function CrystalAnimation() {
   return (
-    <div className="flex items-center justify-center w-full h-screen">
+    <div className="flex items-center justify-center w-full h-screen overflow-hidden">
       <motion.svg
         width="370"
         height="450"
