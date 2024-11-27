@@ -1,19 +1,12 @@
 import { motion } from 'framer-motion';
 
-const crystalAnimations = {
-  delay: 0.5,
-  duration: 1,
-  repeat: 1,
-  repeatType: 'reverse',
-};
-
 const animationConfigs = {
   filterAnimation: {
-    initial: { filter: 'drop-shadow(0px 0px 5px rgba(145, 227, 255, 0.659))' },
+    initial: { filter: 'drop-shadow(0px 0px 5px rgba(55, 75, 82, 0.659))' },
     animate: {
       height: '550px',
       width: '470px',
-      filter: 'drop-shadow(0px 0px 10px 5px rgba(214, 116, 214, 0.741))',
+      filter: 'drop-shadow(0px 0px 10px 5px rgba(151, 86, 151, 0.741))',
     },
     transition: { duration: 1, repeat: 1, repeatType: 'reverse' },
   },

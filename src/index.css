@@ -9,3 +9,15 @@
 body {
   @apply bg-slate-950;
 }
+
+@keyframes waveEffect {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-2px) scaleY(1.05);
+  }
+  100% {
+    transform: translateX(0) scaleY(1);
+  }
+}
