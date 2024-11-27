@@ -6,7 +6,23 @@ const crystalAnimations = {
   repeat: 1,
   repeatType: 'reverse',
 };
-const crystalInitialValues = { x: 0, y: 0 };
+
+const animationConfigs = {
+  filterAnimation: {
+    initial: { filter: 'drop-shadow(0px 0px 5px rgba(145, 227, 255, 0.659))' },
+    animate: {
+      height: '550px',
+      width: '470px',
+      filter: 'drop-shadow(0px 0px 10px 5px rgba(214, 116, 214, 0.741))',
+    },
+    transition: { duration: 1, repeat: 1, repeatType: 'reverse' },
+  },
+  pathMotion: (x, y) => ({
+    initial: { x: 0, y: 0 },
+    animate: { x, y },
+    transition: { delay: 0.5, duration: 1, repeat: 1, repeatType: 'reverse' },
+  }),
+};
 
 function CrystalAnimation() {
   return (
@@ -18,32 +34,20 @@ function CrystalAnimation() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="stroke-stone-200 stroke-[0.5] py-20"
-        style={{
-          filter: 'drop-shadow(0px 0px 5px rgba(145, 227, 255, 0.659))',
-        }}
-        animate={{
-          filter: 'drop-shadow(0px 0px 10px 5px rgba(214, 116, 214, 0.741))',
-          height: '550px',
-          width: '470px',
-        }}
-        transition={crystalAnimations}
+        {...animationConfigs.filterAnimation}
       >
         <motion.path
           id="left-front"
           d="M74.9989 229.533L24.4442 202.126L0.27623 162.013L36.5999 30.3049L74.999 52.5142L74.9989 229.533Z"
           fill="url(#paint0_linear_1_810)"
-          initial={crystalInitialValues}
-          animate={{ x: -10, y: 10 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(-10, 10)}
         />
         <motion.path
           opacity="0.8"
           d="M74.9996 229.533L74.999 138.57L30.3495 164.868L24.4448 202.126L74.9996 229.533Z"
           fill="url(#paint1_linear_1_810)"
           fillOpacity="0.7"
-          initial={crystalInitialValues}
-          animate={{ x: -10, y: 10 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(-10, 10)}
         />
         <g opacity="0.8">
           <motion.path
@@ -51,121 +55,91 @@ function CrystalAnimation() {
             d="M74.9997 229.532L125.563 202.12L149.722 162.013L113.399 30.3049L74.9996 52.5142L74.9997 229.532Z"
             fill="url(#paint2_linear_1_810)"
             fillOpacity="0.7"
-            initial={crystalInitialValues}
-            animate={{ x: 10, y: 10 }}
-            transition={crystalAnimations}
+            {...animationConfigs.pathMotion(10, 10)}
           />
           <motion.path
             d="M74.9997 229.532L125.563 202.12L149.722 162.013L113.399 30.3049L74.9996 52.5142L74.9997 229.532Z"
             fill="url(#paint3_linear_1_810)"
             fillOpacity="0.5"
-            initial={crystalInitialValues}
-            animate={{ x: 10, y: 10 }}
-            transition={crystalAnimations}
+            {...animationConfigs.pathMotion(10, 10)}
           />
         </g>
         <motion.path
           d="M36.598 30.3049L74.999 52.5136L74.999 8.09615L36.598 30.3049Z"
           fill="url(#paint4_linear_1_810)"
-          initial={crystalInitialValues}
-          animate={{ x: -10, y: -10 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(-10, -10)}
         />
         <motion.path
           d="M74.9987 159.591L100.425 174.296L74.9987 189.002L49.572 174.296L74.9987 159.591Z"
           fill="url(#paint5_linear_1_810)"
           fillOpacity="0.5"
-          initial={crystalInitialValues}
-          animate={{ y: 20 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(0, 20)}
         />
         <motion.path
           d="M113.4 30.3049L74.9987 8.09615L74.9987 52.5136L113.4 30.3049Z"
           fill="url(#paint6_linear_1_810)"
           fillOpacity="0.8"
-          initial={crystalInitialValues}
-          animate={{ x: 10, y: -10 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(10, -10)}
         />
         <motion.path
           d="M74.9987 17.4564L95.5954 29.3683L74.9987 41.2801L54.4021 29.3683L74.9987 17.4564Z"
           fill="url(#paint7_linear_1_810)"
           fillOpacity="0.6"
-          initial={crystalInitialValues}
-          animate={{ y: -10 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(0, -10)}
         />
         <motion.path
           opacity="0.8"
           d="M75.0001 229.532L75.0007 138.57L119.65 164.868L125.555 202.125L75.0001 229.532Z"
           fill="url(#paint8_linear_1_810)"
-          initial={crystalInitialValues}
-          animate={{ x: 10, y: 10 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(10, 10)}
         />
         <motion.path
           d="M149.722 162.012L125.555 202.126L119.65 164.868L149.722 162.012Z"
           fill="url(#paint9_linear_1_810)"
           fillOpacity="0.7"
-          initial={crystalInitialValues}
-          animate={{ x: 20, y: 20 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(20, 20)}
         />
         <motion.path
           d="M74.9987 124.937L116.381 148.87L74.9987 172.803L33.6169 148.87L74.9987 124.937Z"
           fill="url(#paint10_linear_1_810)"
           fillOpacity="0.7"
-          initial={crystalInitialValues}
-          animate={{ x: 20 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(20, 0)}
         />
         <motion.path
           d="M74.9987 124.937L116.381 148.87L74.9987 172.803L33.6169 148.87L74.9987 124.937Z"
           fill="url(#paint11_linear_1_810)"
           fillOpacity="0.7"
-          initial={crystalInitialValues}
-          animate={{ x: -20 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(-20, 0)}
         />
         <motion.path
           d="M74.9982 172.802L116.379 148.87L100.424 174.297L74.9982 189.002V172.802Z"
           fill="url(#paint12_linear_1_810)"
           fillOpacity="0.9"
-          initial={crystalInitialValues}
-          animate={{ x: 20, y: 40 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(20, 40)}
         />
         <motion.path
           d="M74.4316 168.878L34.1844 145.601L54.4004 29.3684L74.4316 40.9541L74.4316 168.878Z"
           fill="url(#paint13_linear_1_810)"
           fillOpacity="0.6"
-          initial={crystalInitialValues}
-          animate={{ x: -20, y: 30 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(-20, 30)}
         />
         <motion.path
           d="M74.9991 172.808L116.38 148.876L95.5947 29.3684L74.999 41.2805L74.9991 172.808Z"
           fill="url(#paint14_linear_1_810)"
           fillOpacity="0.9"
-          initial={crystalInitialValues}
-          animate={{ x: 20, y: 30 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(20, 30)}
         />
         <motion.path
           d="M74.9982 172.802L33.617 148.87L49.572 174.297L74.9982 189.002V172.802Z"
           fill="url(#paint15_linear_1_810)"
           fillOpacity="0.9"
-          initial={crystalInitialValues}
-          animate={{ x: -20, y: 40 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(-20, 40)}
         />
         <motion.path
           d="M0.276775 162.012L24.4446 202.126L30.3492 164.868L0.276775 162.012Z"
           fill="url(#paint16_linear_1_810)"
           fillOpacity="0.7"
-          initial={crystalInitialValues}
-          animate={{ x: -20, y: 20 }}
-          transition={crystalAnimations}
+          {...animationConfigs.pathMotion(-20, 20)}
         />
         <defs>
           <linearGradient
