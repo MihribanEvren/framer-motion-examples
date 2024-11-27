@@ -17,7 +17,7 @@ function CrystalAnimation() {
         viewBox="0 0 160 240"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="stroke-stone-200 stroke-[0.5]"
+        className="stroke-stone-200 stroke-[0.5] py-20"
         style={{
           filter: 'drop-shadow(0px 0px 5px rgba(145, 227, 255, 0.659))',
         }}
@@ -41,6 +41,9 @@ function CrystalAnimation() {
           d="M74.9996 229.533L74.999 138.57L30.3495 164.868L24.4448 202.126L74.9996 229.533Z"
           fill="url(#paint1_linear_1_810)"
           fillOpacity="0.7"
+          initial={crystalInitialValues}
+          animate={{ x: -10, y: 10 }}
+          transition={crystalAnimations}
         />
         <g opacity="0.8">
           <motion.path
@@ -68,10 +71,13 @@ function CrystalAnimation() {
           animate={{ x: -10, y: -10 }}
           transition={crystalAnimations}
         />
-        <path
+        <motion.path
           d="M74.9987 159.591L100.425 174.296L74.9987 189.002L49.572 174.296L74.9987 159.591Z"
           fill="url(#paint5_linear_1_810)"
           fillOpacity="0.5"
+          initial={crystalInitialValues}
+          animate={{ y: 20 }}
+          transition={crystalAnimations}
         />
         <motion.path
           d="M113.4 30.3049L74.9987 8.09615L74.9987 52.5136L113.4 30.3049Z"
